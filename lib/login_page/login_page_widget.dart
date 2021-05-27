@@ -3,9 +3,9 @@ import '../create_account_page/create_account_page_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../home_page/home_page_widget.dart';
 import '../main.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPageWidget extends StatefulWidget {
@@ -362,118 +362,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       )
                                     ],
                                   ),
-                                ),
-                              ),
-                            ),
-                            isIos
-                                ? Padding(
-                                    padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
-                                        final user =
-                                            await signInWithApple(context);
-                                        if (user == null) {
-                                          return;
-                                        }
-                                        await Navigator.pushAndRemoveUntil(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => NavBarPage(
-                                                initialPage: 'HomePage'),
-                                          ),
-                                          (r) => false,
-                                        );
-                                      },
-                                      text: 'Sign in with Apple',
-                                      icon: FaIcon(
-                                        FontAwesomeIcons.apple,
-                                        size: 20,
-                                      ),
-                                      options: FFButtonOptions(
-                                        width: 200,
-                                        height: 44,
-                                        color: Colors.white,
-                                        textStyle: GoogleFonts.getFont(
-                                          'Roboto',
-                                          color: Colors.black,
-                                          fontSize: 15,
-                                        ),
-                                        elevation: 4,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 0,
-                                        ),
-                                        borderRadius: 12,
-                                      ),
-                                    ),
-                                  )
-                                : Container(),
-                            Align(
-                              alignment: Alignment(0, 0),
-                              child: Container(
-                                width: 200,
-                                height: 44,
-                                child: Stack(
-                                  children: [
-                                    Align(
-                                      alignment: Alignment(0, 0),
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final user =
-                                              await signInWithFacebook(context);
-                                          if (user == null) {
-                                            return;
-                                          }
-                                          await Navigator.pushAndRemoveUntil(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => NavBarPage(
-                                                  initialPage: 'HomePage'),
-                                            ),
-                                            (r) => false,
-                                          );
-                                        },
-                                        text: 'Login with Facebook',
-                                        icon: Icon(
-                                          Icons.add,
-                                          color: Colors.transparent,
-                                          size: 20,
-                                        ),
-                                        options: FFButtonOptions(
-                                          width: 200,
-                                          height: 44,
-                                          color: Colors.white,
-                                          textStyle: GoogleFonts.getFont(
-                                            'Roboto',
-                                            color: Color(0xFF1877F2),
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 14,
-                                          ),
-                                          elevation: 4,
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 0,
-                                          ),
-                                          borderRadius: 12,
-                                        ),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: Alignment(-0.83, 0),
-                                      child: Container(
-                                        width: 22,
-                                        height: 22,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Image.network(
-                                          'https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512',
-                                          fit: BoxFit.contain,
-                                        ),
-                                      ),
-                                    )
-                                  ],
                                 ),
                               ),
                             )
